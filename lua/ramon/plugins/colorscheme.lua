@@ -20,6 +20,7 @@ return {
             -- vim.cmd.hi('Comment gui=none')
         end,
     },
+
     {
         'rockyzhang24/arctic.nvim',
         branch = 'v2',
@@ -39,7 +40,66 @@ return {
                     vim.api.nvim_set_hl(0, '@label', { fg = colors.light_blue })
                 end,
             })
-            vim.cmd.colorscheme('arctic')
+            -- vim.cmd.colorscheme('arctic')
+        end,
+    },
+
+    {
+        'olivercederborg/poimandres.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('poimandres').setup({
+                -- leave this setup function empty for default config
+                -- or refer to the configuration section
+                -- for configuration options
+            })
+        end,
+
+        -- optionally set the colorscheme within lazy config
+        init = function()
+            -- vim.cmd('colorscheme poimandres')
+        end,
+    },
+
+    {
+        'AlexvZyl/nordic.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('nordic').setup({
+                bold_keyword = false,
+                reduced_blue = false,
+            })
+            vim.cmd('colorscheme nordic')
+        end,
+    },
+
+    {
+        'gbprod/nord.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('nord').setup({})
+            -- vim.cmd.colorscheme('nord')
+        end,
+    },
+
+    {
+        'comfysage/evergarden',
+        opts = {
+            transparent_background = false,
+            contrast_dark = 'hard', -- 'hard'|'medium'|'soft'
+            overrides = {}, -- add custom overrides
+        },
+        config = function()
+            ---@diagnostic disable-next-line: missing-fields
+            require('evergarden').setup({
+                transparent_background = false,
+                contrast_dark = 'soft', -- 'hard'|'medium'|'soft'
+                overrides = {}, -- add custom overrides
+            })
+            -- vim.cmd.colorscheme('evergarden')
         end,
     },
 }
