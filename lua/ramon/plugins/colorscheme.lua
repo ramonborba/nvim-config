@@ -14,7 +14,7 @@ return {
             -- Load the colorscheme here.
             -- Like many other themes, this one has different styles, and you could load
             -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-            -- vim.cmd.colorscheme('tokyonight-night')
+            vim.cmd.colorscheme('tokyonight-night')
 
             -- You can configure highlights by doing something like:
             -- vim.cmd.hi('Comment gui=none')
@@ -71,7 +71,7 @@ return {
                 bold_keyword = false,
                 reduced_blue = false,
             })
-            vim.cmd('colorscheme nordic')
+            -- vim.cmd('colorscheme nordic')
         end,
     },
 
@@ -87,11 +87,8 @@ return {
 
     {
         'comfysage/evergarden',
-        opts = {
-            transparent_background = false,
-            contrast_dark = 'hard', -- 'hard'|'medium'|'soft'
-            overrides = {}, -- add custom overrides
-        },
+        lazy = false,
+        priority = 1000,
         config = function()
             ---@diagnostic disable-next-line: missing-fields
             require('evergarden').setup({
@@ -100,6 +97,58 @@ return {
                 overrides = {}, -- add custom overrides
             })
             -- vim.cmd.colorscheme('evergarden')
+        end,
+    },
+
+    {
+        'marko-cerovac/material.nvim',
+        -- dependencies = { 'nvim-lualine/lualine.nvim' },
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('material').setup({
+
+                contrast = {
+                    cursor_line = false, -- Enable darker background for the cursor line
+                    lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
+                },
+
+                styles = { -- Give comments style such as bold, italic, underline etc.
+                    comments = { --[[ italic = true ]]
+                    },
+                    strings = { --[[ bold = true ]]
+                    },
+                    keywords = { --[[ underline = true ]]
+                    },
+                    functions = { --[[ bold = true, undercurl = true ]]
+                    },
+                    variables = {},
+                    operators = {},
+                    types = {},
+                },
+
+                plugins = { -- Uncomment the plugins that you use to highlight them
+                    'gitsigns',
+                    'harpoon',
+                    'mini',
+                    'neo-tree',
+                    'nvim-web-devicons',
+                    'telescope',
+                    'which-key',
+                },
+
+                disable = {
+                    background = false, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+                },
+
+                high_visibility = {
+                    lighter = false, -- Enable higher contrast text for lighter style
+                    darker = false, -- Enable higher contrast text for darker style
+                },
+
+                lualine_style = 'default', -- Lualine style ( can be 'stealth' or 'default' )
+            })
+            -- vim.cmd.colorscheme('material')
         end,
     },
 }
