@@ -34,3 +34,7 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<CR>', { desc = '[D]elete buffer' })
 vim.keymap.set('n', '<leader>bn', '<cmd>bnext<CR>', { desc = '[N]ext buffer' })
 vim.keymap.set('n', '<leader>bp', '<cmd>bprev<CR>', { desc = '[P]revious buffer' })
+
+-- Copy/paste system clipboard
+vim.keymap.set({ 'n', 'v' }, '<leader>y', [["+y]], { desc = '[Y]ank to sys clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', [["+p]], { desc = '[P]aste to sys clipboard' })
