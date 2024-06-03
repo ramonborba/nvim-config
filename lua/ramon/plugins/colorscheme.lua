@@ -14,7 +14,7 @@ return {
             -- Load the colorscheme here.
             -- Like many other themes, this one has different styles, and you could load
             -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-            vim.cmd.colorscheme('tokyonight-night')
+            -- vim.cmd.colorscheme('tokyonight-night')
 
             -- You can configure highlights by doing something like:
             -- vim.cmd.hi('Comment gui=none')
@@ -38,6 +38,8 @@ return {
                     vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg = colors.purple })
                     vim.api.nvim_set_hl(0, '@lsp.typemod.variable.defaultLibrary', { fg = colors.blue2 })
                     vim.api.nvim_set_hl(0, '@label', { fg = colors.light_blue })
+                    vim.api.nvim_set_hl(0, 'Normal', { bg = colors.norm_bg })
+                    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = colors.norm_bg })
                 end,
             })
             -- vim.cmd.colorscheme('arctic')
@@ -71,7 +73,7 @@ return {
                 bold_keyword = false,
                 reduced_blue = false,
             })
-            -- vim.cmd('colorscheme nordic')
+            vim.cmd('colorscheme nordic')
         end,
     },
 

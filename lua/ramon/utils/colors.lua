@@ -1,6 +1,6 @@
 local M = {
     norm_fg = '#cccccc',
-    norm_bg = '#1f1f1f',
+    norm_bg = '#1e2026',
 
     dark_red = '#D16969',
     orange = '#f9ae28',
@@ -43,23 +43,21 @@ local M = {
     label_fg = '#c8c8c8',
 }
 
+M.setTransparentBackground = function()
+    local none = 'NONE'
+    vim.api.nvim_set_hl(0, 'Normal', { bg = none })
 
+    vim.api.nvim_set_hl(0, 'SignColumn', { bg = none })
 
- M.setTransparentBackground = function()
-            local none = "NONE"
-            vim.api.nvim_set_hl(0, "Normal", { bg=none } )
+    vim.api.nvim_set_hl(0, 'NormalNC', { bg = none })
 
-            vim.api.nvim_set_hl(0, "SignColumn", { bg=none } )
+    vim.api.nvim_set_hl(0, 'MsgArea', { bg = none })
 
-            vim.api.nvim_set_hl(0, "NormalNC", { bg=none } )
+    vim.api.nvim_set_hl(0, 'TelescopeBorder', { bg = none })
 
-            vim.api.nvim_set_hl(0, "MsgArea", { bg=none } )
+    vim.api.nvim_set_hl(0, 'NvimTreeNormal', { bg = none })
 
-            vim.api.nvim_set_hl(0, "TelescopeBorder", { bg=none } )
-
-            vim.api.nvim_set_hl(0, "NvimTreeNormal", { bg=none } )
-
-            vim.cmd ("let &fcs='eob: '")
+    vim.cmd("let &fcs='eob: '")
 end
 
 return M
