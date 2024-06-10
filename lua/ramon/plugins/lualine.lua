@@ -4,9 +4,16 @@ return {
     config = function()
         require('lualine').setup({
             options = {
-                theme = (vim.g.colors_name == 'arctic') and 'ayu_mirage' or 'auto',
+                theme = 'auto',
+                -- component_separators = { left = '|', right = '|' },
+                -- section_separators = { left = '█', right = '█' },
+                component_separators = { left = '|', right = '|' },
+                section_separators = { left = '', right = '' },
+                -- component_separators = { left = '', right = '' },
+                -- section_separators = { left = '', right = '' },
             },
             sections = {
+                lualine_b = { 'branch', 'diagnostics' },
                 lualine_c = { { 'filename', path = 1 } },
             },
         })
