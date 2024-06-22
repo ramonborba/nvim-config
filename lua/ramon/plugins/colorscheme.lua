@@ -38,8 +38,8 @@ return {
                     vim.api.nvim_set_hl(0, '@lsp.type.parameter', { fg = colors.purple })
                     vim.api.nvim_set_hl(0, '@lsp.typemod.variable.defaultLibrary', { fg = colors.blue2 })
                     vim.api.nvim_set_hl(0, '@label', { fg = colors.light_blue })
-                    vim.api.nvim_set_hl(0, 'Normal', { bg = colors.norm_bg })
-                    vim.api.nvim_set_hl(0, 'NormalFloat', { bg = colors.norm_bg })
+                    -- vim.api.nvim_set_hl(0, 'Normal', { bg = colors.norm_bg })
+                    -- vim.api.nvim_set_hl(0, 'NormalFloat', { bg = colors.norm_bg })
                 end,
             })
             -- vim.cmd.colorscheme('arctic')
